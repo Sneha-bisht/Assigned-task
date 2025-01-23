@@ -1,14 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media(min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    } 
+}
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
-    padding: 10px;
 }
+
+@media(min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+}
+
 .card {
-    width: 250px;
     padding: 20px;
     border: 1px solid gainsboro;
     border-radius: 25px;
@@ -48,9 +66,14 @@
     font-family: 'Arial', sans-serif;
 }
 
+.card-footer {
+    display: flex;
+    justify-content: center
+}
+
 .btn {
+    min-width: 180px;
     padding:10px;
-    width: 50%;
     font-size: 14px;
     font-weight: bold;
     border: 2px solid teal;
@@ -58,20 +81,7 @@
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    margin-left: 45%;
-
 }
 
 
-@media (max-width: 768px) {
-    .card {
-        width: 45%;
-    }
-}
 
-@media (max-width: 480px) {
-    .card {
-        width: 100%;
-    }
-
-}
